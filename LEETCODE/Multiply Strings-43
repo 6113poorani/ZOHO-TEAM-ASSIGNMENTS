@@ -1,0 +1,47 @@
+/*Example 1:
+
+Input: num1 = "2", num2 = "3"
+Output: "6"
+Example 2:
+
+Input: num1 = "123", num2 = "456"
+Output: "56088"*/
+
+
+class Solution {
+    public String multiply(String a1, String b1) {
+       int i;
+         if(a1.equals("0")||b1.equals("0")) return "0";
+        if(a1.length()==0||b1.length()==0) return "0";
+
+    int[] r=new int[a1.length()+b1.length()-1];
+    int k=r.length-1;
+    for(i=b1.length()-1;i>=0;i--){
+        int k1=k;
+        for(int j=a1.length()-1;j>=0;j--){
+            int m=(b1.charAt(i)-48)*(a1.charAt(j)-48);
+            r[k1]+=m;
+            if(r[k1]>9){
+
+                if(k1-1>=0){
+                    r[k1-1]+=r[k1]/10;
+                r[k1]=r[k1]%10;
+
+                }
+            }
+
+            k1--;
+           
+        }
+       
+        k--;
+    }
+
+    String ans="";
+      
+      for(i=0;i<r.length;i++){
+          ans+=r[i];
+      }
+        return ans;
+    }
+}

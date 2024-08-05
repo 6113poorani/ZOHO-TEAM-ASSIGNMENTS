@@ -1,0 +1,116 @@
+convert a number in figures to number in words
+ip 345
+output three hundred and forty five
+import java.util.*;
+public class Main {
+    static String ones(int n){
+        if(n==0) return "Zero";
+        if(n==1) return "One";
+        if(n==2) return "Two";
+        if(n==3) return "Three";
+        if(n==4) return "Four";
+        if(n==5) return "Five";
+        if(n==6) return "Six";
+        if(n==7) return "Seven";
+        if(n==8) return "Eight";
+        return "Nine";
+
+    }
+    static String tens(int n){
+        if(n==0) return "";
+        if(n==1) return "";
+        if(n==2) return "Twenty";
+        if(n==3) return "Thirty";
+        if(n==4) return "forty";
+        if(n==5) return "Fifty";
+        if(n==6) return "Sixty";
+        if(n==7) return "Seventy";
+        if(n==8) return "Eighty";
+        return "Ninety";
+
+    }
+    static String onesTens(int n,String ans){
+        if(ans.equals("Zero")) return "ten";
+        if(ans.equals("One")) return "eleven";
+        if(ans.equals("Two")) return "twelve";
+        if(ans.equals("Three")) return "thirteen";
+        if(ans.equals("Four")) return "fourteen";
+        if(ans.equals("Five")) return "fifteen";
+        if(ans.equals("Six")) return "sixteen";
+        if(ans.equals("Seven")) return "seventeen";
+        if(ans.equals("Eight")) return "eighteen";
+         return "nineteen";
+
+
+    }
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = Integer.MAX_VALUE;
+        String ans="";
+        int org=n;
+        int k=0;
+        while(n>0){
+            if(k==0){
+                ans+=ones(n%10);
+            }
+            if(k==1){
+                if(n%10==1){
+                    ans=onesTens(n%10,ans);
+                }
+                else if(ans.equals("Zero")){
+                    ans=tens(n%10);
+                }
+                else
+                ans=tens(n%10)+" "+ans;
+            }
+            if(k==2){
+                if(n%10!=0)
+                ans=ones(n%10)+" hundred and "+ans;
+            }
+            if(k==3){
+                if(n%10!=0) {
+                    ans = ones(n % 10) + " thousand and " + ans;
+                }
+               // else if(!ans.equals(""))
+                   // ans="thousand "+ans;
+            }
+            if(k==4){
+                ans=tens(n%10)+" "+ans;
+            }
+            if(k==5){
+                if(n>10&&((n/10)%10)==1) {
+                    ans = onesTens(n % 10, ones(n % 10)) + " lakh and " + ans;
+                }
+                else
+                ans=ones(n%10)+" lakh and "+ans;
+            }
+            if(k==6){
+                if(n%10!=1)
+               ans=tens(n%10)+" "+ans;
+            }
+            if(k==7){
+                if(n%10!=0){
+                if(n>10&&((n/10)%10)==1){
+                    ans=onesTens(n%10,ones(n%10))+" crore and "+ans;
+
+
+                }
+                else
+                ans=ones(n%10)+" crore and "+ans;}
+
+            }
+            if(k==8){
+                if(n%10!=1)
+                ans=tens(n%10)+" "+ans;
+            }
+            if(k==9){
+                ans=ones(n%10)+" million and "+ans;
+            }
+
+            n/=10;
+            k++;
+        }
+    System.out.println(ans);
+        
+    }
+}

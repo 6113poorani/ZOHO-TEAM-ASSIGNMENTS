@@ -1,0 +1,32 @@
+find the number of grandchildren for a given name
+
+import java.util.*;
+public class Main {
+    static int grandChild(String t,String[][] a){
+        int k=0;
+        for(int i=0;i<a.length;i++){
+            if(a[i][1].equals(t))
+                k++;
+        }
+        return k;
+    }
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        String[][] a = new String[n][2];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < 2; j++) {
+                a[i][j] = scn.next();
+            }
+        }
+        String t=scn.next();
+        int c=0;
+        for(int i=0;i<n;i++){
+            if(a[i][1].equals(t)){
+                c+=grandChild(a[i][0],a);
+            }
+        }
+        System.out.print(c);
+    }
+}

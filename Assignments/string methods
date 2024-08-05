@@ -36,7 +36,7 @@ public class Main1 {
         int bin=98;
         System.out.println("ValueOf "+String.valueOf(bin));//primitive datatypes convert to string
         System.out.println("Replace "+s.replace('e','z'));//replace with character
-        System.out.println("ReplaceAll "+s.replaceAll("e","z"));..replace by string
+        System.out.println("ReplaceAll "+s.replaceAll("e","z"));//replace by string
         System.out.println("ReplaceFirst "+s.replaceFirst("e","x"));
 
     }

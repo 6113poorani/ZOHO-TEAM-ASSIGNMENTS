@@ -1,0 +1,74 @@
+
+import java.util.Arrays;
+public class Main1 {
+
+    public static void main(String[] args) {
+       String s="poorani_SoftwareDeveloper";
+        String s1="poor_SoftwareDeveloper";
+        String s2="poor_SoftwareDeveloper";
+        String s3="PooranI_SoftwareDeveloper";
+        System.out.println("CharAt "+s.charAt(9));//used to retrive a character of particular index
+        System.out.println("== "+s==s1);//checks with the refernce
+        System.out.println("Equals "+s.equals(s2));//checks with the actual content
+        System.out.println("equalsIgnoreCase "+s.equalsIgnoreCase(s3));//checks and ignore the lower/uppercases
+        System.out.println("Length "+s.length());//used to find length of the string
+        s="poorani_SoftwareDeveloper             ";
+     System.out.println(s);
+        s=s.trim();//used to eliminate the extra spaced placed in begining and ending of the string not a middle
+    
+        System.out.println("After Trim "+s);
+        System.out.println("Substring "+s.substring(0,5));//used to retrive a string from start to ending index
+        System.out.println("Index Of "+s.indexOf('S'));//used to find the index of character
+        System.out.println(s.indexOf('z'));//the character not present in the string returns -1
+        System.out.println("Last Index "+s.lastIndexOf('e'));//used to find the last index of character
+        String[] a=s.split("-");
+        System.out.println(Arrays.toString(a));//split the string "-" and store it in array
+        System.out.println("Concat "+s1.concat(" salary 500000"));//add the string
+        System.out.println("Empty "+s.isEmpty());//checks empty or not
+        System.out.println("Lower Case "+s.toLowerCase());//convert to LowerCase
+        System.out.println("UpperCase "+s.toUpperCase());//convert to UpperCase
+        System.out.println("StartsWith "+s.startsWith("poo"));//used to find a string startswith particular character
+        System.out.println("EndsWith "+s.endsWith("zse"));//used to find a string endsswith particular character
+        char[] b=s.toCharArray();//string convert to char array
+        System.out.println(Arrays.toString(b));
+        Integer ain=98;
+        System.out.println("ToString "+ain.toString());//wrapper class non primitive convert to string
+        int bin=98;
+        System.out.println("ValueOf "+String.valueOf(bin));//primitive datatypes convert to string
+        System.out.println("Replace "+s.replace('e','z'));//replace with character
+        System.out.println("ReplaceAll "+s.replaceAll("e","z"));..replace by string
+        System.out.println("ReplaceFirst "+s.replaceFirst("e","x"));
+
+    }
+}
+
+
+
+/*OUTPUT
+
+
+CharAt o
+false
+Equals false
+equalsIgnoreCase true
+Length 25
+poorani_SoftwareDeveloper             
+After Trim poorani_SoftwareDeveloper
+Substring poora
+Index Of 8
+-1
+Last Index 23
+[poorani_SoftwareDeveloper]
+Concat poor_SoftwareDeveloper salary 500000
+Empty false
+Lower Case poorani_softwaredeveloper
+UpperCase POORANI_SOFTWAREDEVELOPER
+StartsWith true
+EndsWith false
+[p, o, o, r, a, n, i, _, S, o, f, t, w, a, r, e, D, e, v, e, l, o, p, e, r]
+ToString 98
+ValueOf 98
+Replace poorani_SoftwarzDzvzlopzr
+ReplaceAll poorani_SoftwarzDzvzlopzr
+ReplaceFirst poorani_SoftwarxDeveloper
+*/

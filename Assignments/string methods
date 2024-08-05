@@ -39,6 +39,21 @@ public class Main1 {
         System.out.println("ReplaceAll "+s.replaceAll("e","z"));//replace by string
         System.out.println("ReplaceFirst "+s.replaceFirst("e","x"));
 
+    System.out.println(s.subSequence(1,5));//like substring
+     String myStr1 = "Hello, World!";
+     String myStr2 = "New World";
+     System.out.println(myStr1.regionMatches(7, myStr2, 4, 5));//match with another string
+     System.out.println(myStr1.regionMatches(0, myStr2, 0, 5));
+     String regex = "cat|dog|fish";
+     System.out.println("cat".matches(regex));
+     String fruits = String.join( "1", "Apple", "567");
+     System.out.println(fruits);
+     String myStr = "Hello";
+     System.out.println(myStr.contains("Hel"));
+     String Str1 = "Hello";
+     String Str2 = "Hello";
+     System.out.println(Str1.compareTo(Str2));
+
     }
 }
 
@@ -71,4 +86,12 @@ ValueOf 98
 Replace poorani_SoftwarzDzvzlopzr
 ReplaceAll poorani_SoftwarzDzvzlopzr
 ReplaceFirst poorani_SoftwarxDeveloper
+oora
+true
+false
+true
+Apple1567
+true
+0
+
 */
